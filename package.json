@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/Semigradsky/postcss-attribute-case-insensitive#readme",
   "devDependencies": {
-    "babel-cli": "^6.11.4",
+    "babel-cli": "^6.14.0",
     "babel-eslint": "^6.1.2",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.9.0",
