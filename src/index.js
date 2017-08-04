@@ -1,5 +1,6 @@
 import postcss from 'postcss';
 import parser from 'postcss-selector-parser';
+import { get } from 'lodash';
 
 function nodeIsInsensitiveAttribute(node) {
 	return node.type === 'attribute' && node.insensitive;
@@ -82,8 +83,17 @@ function transform(selectors) {
 	}
 }
 
+function cssRuleHasSelectorEndingWithColon(rule) {
+	const selector = get(rule, 'raws.selector.raw', rule.selector);
+	return selector[selector.length - 1] === ':';
+}
+
 export default postcss.plugin('postcss-attribute-case-insensitive', () => css => {
 	css.walkRules(rule => {
+		if (cssRuleHasSelectorEndingWithColon(rule)) {
+			return;
+		}
+
 		rule.selector = parser(transform).process(rule.selector).result;
 	});
 });
