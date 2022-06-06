@@ -1,3 +1,6 @@
+<div align="center">⚠️ PostCSS Attribute Case Insensitive was moved to <a href="https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-attribute-case-insensitive">@csstools/postcss-plugins</a>. ⚠️ <br>
+<a href="https://github.com/csstools/postcss-plugins/discussions/75">Read the announcement</a></div>
+
 # postcss-attribute-case-insensitive [![Build Status][ci-img]][ci]
 
 [PostCSS] plugin to support [case insensitive attributes](https://www.w3.org/TR/selectors4/#attribute-case).
